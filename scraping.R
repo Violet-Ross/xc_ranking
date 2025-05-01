@@ -427,7 +427,7 @@ to_scrape <- unique(to_scrape)
 
 # get the datasets 
 for(i in 1:nrow(to_scrape)) {
-  data <- scrape_meet(toString(to_scrape[i,1]), as.integer(to_scrape[i,2]), toString(to_scrape[i,4]) )
+  data <- scrape_meet(toString(to_scrape[i,1]), as.integer(to_scrape[i,2]) )
   datasets[[i]] <- data
 }
 
@@ -462,7 +462,7 @@ for(i in 1:length(datasets)){
     for(col in 2:(row + 1)){
       adj_matrix[row, col] <- 1
       adj_matrix_score_diff[row, col] <- abs(scores[col] - scores[row])
-      dj_matrix_time_diff[row, col] <- abs(time_in_sec[col] - time_in_sec[row])
+      adj_matrix_time_diff[row, col] <- abs(time_in_sec[col] - time_in_sec[row])
     }
     for(col in (row + 1):ncol(adj_matrix)){
       adj_matrix[row, col] <- 0
@@ -501,7 +501,7 @@ mat_diff <- matrix(0L, length(schools), length(schools))
 dimnames(mat_diff) <- list(schools, schools)
 
 mat_time_diff <- matrix(0L, length(schools), length(schools))
-dimnames(mat_time_iff) <- list(schools, schools)
+dimnames(mat_time_diff) <- list(schools, schools)
 
 for(i in 1:length(adj_mat_list)){
   i_matrix <- adj_mat_list[[i]]
