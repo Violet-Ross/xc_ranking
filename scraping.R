@@ -425,8 +425,18 @@ to_scrape <- unique(to_scrape)
 
 
 # get the datasets 
-for(i in 1:nrow(to_scrape)) {
-  data <- scrape_meet(toString(to_scrape[i,1]), as.integer(to_scrape[i,2]) )
+dates <- NULL
+
+# get the datasets 
+for(i in 1:nrow(to_scrape_dedup)) {
+  data <- scrape_meet(toString(to_scrape_dedup[i,1]), as.integer(to_scrape_dedup[i,2]) )
+  
+  dates[i] <- to_scrape_dedup[i,1] %>%
+    read_html() %>%
+    html_nodes(xpath='/html/body/div[4]/div/div/div[2]/div/div/div/div/div[1]') %>%
+    html_text() %>%
+    as.Date(format = "%B %d, %Y")
+  
   datasets[[i]] <- data
 }
 
@@ -468,6 +478,18 @@ for(i in 1:length(datasets)){
   adj_mat_list_diff[[i]] <- mat_diff
 }
 
+ordered <- order(dates, decreasing = TRUE)
+alpha = 0.9
+ #divide by alpha^i for most recent to oldest races
+for (i in 1:length(ordered)) {
+ #go in reverse
+ #most recent to oldest
+  most_recent_index <- ordered[i]
+  j = length(ordered) - i
+  adj_mat_list[[most_recent_index]] <- (adj_mat_list[[most_recent_index]] * alpha^i)
+  adj_mat_list_diff[[most_recent_index]] <- (adj_mat_list_diff[[most_recent_index]] * alpha^i)
+}
+
 
 schools <- c()
 c <- 1
@@ -502,8 +524,8 @@ mat # final adjacency matrix
 
 
 # get list of all D3 programs from TFRRS
-d3_schools_official <- scrape_meet("https://www.tfrrs.org/leagues/51.html", 1)[[2]]
-d3_schools <- c("MIT", "U. of Chicago", "Williams", "NYU", "Johns Hopkins" , "Colorado College", "Emory", "Washington and Lee", "SUNY Geneseo", "Washington U.", "Claremont-Mudd-Scripps", "RPI", "Wis.-La Crosse", "Amherst", "Calvin", "Tufts", "St. Olaf", "Carleton", "UC Santa Cruz", "Vassar", "George Fox", "Middlebury", "Connecticut College", "Wesleyan", "Carnegie Mellon", "Wartburg", "Lynchburg", "Trine", "DePauw", "Pomona-Pitzer", "Coast Guard", "Rowan")
+d3_schools <- scrape_meet("https://www.tfrrs.org/leagues/51.html", 1)[[2]]
+#d3_schools <- c("MIT", "U. of Chicago", "Williams", "NYU", "Johns Hopkins" , "Colorado College", "Emory", "Washington and Lee", "SUNY Geneseo", "Washington U.", "Claremont-Mudd-Scripps", "RPI", "Wis.-La Crosse", "Amherst", "Calvin", "Tufts", "St. Olaf", "Carleton", "UC Santa Cruz", "Vassar", "George Fox", "Middlebury", "Connecticut College", "Wesleyan", "Carnegie Mellon", "Wartburg", "Lynchburg", "Trine", "DePauw", "Pomona-Pitzer", "Coast Guard", "Rowan")
 
 setdiff(d3_schools, d3_schools_official)
 
