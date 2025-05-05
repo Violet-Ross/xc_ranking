@@ -1,5 +1,6 @@
 library(tidyverse)
 library(rvest)
+library(lubridate)
 
 # We'll scrape every meet competed at by any of these teams
 # The list contains all 40 teams which were ranked at some point in the 2024 season
@@ -440,15 +441,18 @@ for(i in 1:nrow(to_scrape_dedup)) {
   datasets[[i]] <- data
 }
 
-
-
 ## Wrangling the datasets into one
 
 adj_mat_list <- list()
 adj_mat_list_diff <- list()
+adj_mat_list_time_diff <- list()
 
 for(i in 1:length(datasets)){
   df <- datasets[[i]]
+  time_in_sec <- sapply(df[[4]], function(t) {
+    parts <- unlist(strsplit(as.character(t), ":"))
+    as.numeric(parts[1]) * 60 + as.numeric(parts[2])
+  })  
   adj_matrix <- df %>%
     select(PL, Team) %>%
     mutate(team2 = Team) %>%
@@ -457,25 +461,34 @@ for(i in 1:length(datasets)){
     select(PL, Team) %>%
     mutate(team2 = Team) %>%
     pivot_wider(names_from = team2, values_from = PL)
-  
+  adj_matrix_time_diff <- df %>%
+    select(PL, Team) %>%
+    mutate(team2 = Team) %>%
+    pivot_wider(names_from = team2, values_from = PL)
+    
   scores <- as.numeric(as.character(df$PL))
   
   for(row in 1:nrow(adj_matrix)){
     for(col in 2:(row + 1)){
       adj_matrix[row, col] <- 1
       adj_matrix_score_diff[row, col] <- abs(scores[col] - scores[row])
+      adj_matrix_time_diff[row, col] <- abs(time_in_sec[col] - time_in_sec[row])
     }
     for(col in (row + 1):ncol(adj_matrix)){
       adj_matrix[row, col] <- 0
       adj_matrix_score_diff[row, col] <- 0
+      adj_matrix_time_diff[row, col] <- 0
     }
   }
   mat <- data.matrix(adj_matrix %>% select(-1))
   mat_diff <- data.matrix(adj_matrix_score_diff %>% select(-1))
+  mat_time_diff <- data.matrix(adj_matrix_time_diff %>% select(-1))
   dimnames(mat) <- list(adj_matrix[[1]], adj_matrix[[1]])
   dimnames(mat_diff) <- list(adj_matrix_score_diff[[1]], adj_matrix_score_diff[[1]])
+  dimnames(mat_time_diff) <- list(adj_matrix_time_diff[[1]], adj_matrix_time_diff[[1]])
   adj_mat_list[[i]] <- mat
   adj_mat_list_diff[[i]] <- mat_diff
+  adj_mat_list_time_diff[[i]] <- mat_time_diff
 }
 
 ordered <- order(dates, decreasing = TRUE)
@@ -509,13 +522,18 @@ dimnames(mat) <- list(schools, schools)
 mat_diff <- matrix(0L, length(schools), length(schools))
 dimnames(mat_diff) <- list(schools, schools)
 
+mat_time_diff <- matrix(0L, length(schools), length(schools))
+dimnames(mat_time_diff) <- list(schools, schools)
+
 for(i in 1:length(adj_mat_list)){
   i_matrix <- adj_mat_list[[i]]
   i_matrix_diff <- adj_mat_list_diff[[i]]
+  i_matrix_time_diff <- adj_mat_list_time_diff[[i]]
   for(row in 1:nrow(i_matrix)){
     for(col in 1:ncol(i_matrix)){
       mat[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix[row, col]
       mat_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix_diff[row, col]
+      mat_time_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat_time_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix_time_diff[row, col]
     }
   }
 }
@@ -532,12 +550,14 @@ setdiff(d3_schools, d3_schools_official)
 
 temp_mat <- as.data.frame(mat)
 temp_mat_diff <- as.data.frame(mat_diff)
+temp_mat_time_diff <- as.data.frame(mat_time_diff)
 
 # order is enforced by in operator, so dont need to order
 # keep cols for schools
 names.use1 <- names(temp_mat)[(names(temp_mat) %in% d3_schools)]
 temp_mat<- temp_mat[, names.use1]
 temp_mat_diff <- temp_mat_diff[, names.use1]
+temp_mat_time_diff <- temp_mat_time_diff[, names.use1]
 # get only the rows we care about
 
 
@@ -551,13 +571,19 @@ final_diff <- temp_mat_diff |>
   filter(rowname %in% d3_schools) |>
   select(-c("rowname"))
 
+final_time_diff <- temp_mat_time_diff |>
+  rownames_to_column() |>
+  filter(rowname %in% d3_schools) |>
+  select(-c("rowname"))
 
 dimnames(final) <- list(colnames(final), colnames(final))
 dimnames(final_diff) <- list(colnames(final_diff), colnames(final_diff))
+dimnames(final_time_diff) <- list(colnames(final_time_diff), colnames(final_time_diff))
 
 
 write_csv(final, "running_all_d3.csv")
 write_csv(final_diff, "running_all_d3_diff.csv")
+write_csv(final_time_diff, "running_all_d3_time_diff.csv")
 
 
 totalDegree <- final %>% colSums() %>% as.data.frame() %>% rename("count" = ".")
