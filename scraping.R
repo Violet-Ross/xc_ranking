@@ -1,5 +1,6 @@
 library(tidyverse)
 library(rvest)
+library(lubridate)
 
 # We'll scrape every meet competed at by any of these teams
 # The list contains all 40 teams which were ranked at some point in the 2024 season
@@ -28,15 +29,15 @@ to_scrape <- data.frame()
 # Maribel Sanchez Souther Invite results
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24416/Maribel_Sanchez_Souther_Invite", 1)
 
-# D3 Pre-Nationals results
-to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23323/D3_Pre-Nationals#event159305", 1)
-
-# Connecticut College Invitational results
+# # D3 Pre-Nationals results
+to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23323/D3_Pre-Nationals#event159305", 3)
+# 
+# # Connecticut College Invitational results
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24515/Connecticut_College_Invitational#event161132", 5)
-
-# 2024 NEWMAC Championships results
+# 
+# # 2024 NEWMAC Championships results
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24719/2024_NEWMAC_Championships", 1)
-
+# 
 # NCAA Division III East Region Cross Country Championships results
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25055/NCAA_Division_III_East_Region_Cross_Country_Championships", 1)
 
@@ -57,10 +58,10 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23323/D3_
 # 2024 UAA XC Championships
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24493/2024_UAA_XC_Championships", 1)
 
-# Chiburg 5k 
+# Chiburg 5k
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25313/Chiburg_5k", 3)
 
-# WILLIAMS 
+# WILLIAMS
 
 # Little 3 Invite
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24579/Little_3_Invite", 1)
@@ -152,7 +153,7 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25061/NCA
 # WASHINGTON AND LEE
 
 # Eagle Cross Country Challenge
-to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23395/Eagle_Cross_Country_Challenge", 1) 
+to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23395/Eagle_Cross_Country_Challenge", 1)
 
 # Virginia Tech Invitational
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23980/Virginia_Tech_Invitational_", 1)
@@ -221,7 +222,7 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25056/NCA
 
 # WHAT IS UW-La Crosse
 
-# AMHERST 
+# AMHERST
 
 # Wesleyan University XC Invitational
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24583/Wesleyan_University_XC_Invitational", 1)
@@ -277,7 +278,7 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24581/UWR
 # Linfield George Oja Invitational
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24330/Linfield_George_Oja_Invitational", 3)
 
-# UC SANTA CRUZ 
+# UC SANTA CRUZ
 
 # San Francisco Invitational
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24470/San_Francisco_Invitational", 3)
@@ -296,7 +297,7 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23539/Coa
 
 # VASSAR
 
-# GEORGE FOX 
+# GEORGE FOX
 
 # Linfield Harrier Classic
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24270/Linfield_Harrier_Classic_", 3)
@@ -393,7 +394,7 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23546/202
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23500/2024_Mastodon_Alumni_Open", 3 )
 
 
-# DEPAUW 
+# DEPAUW
 
 # Gil Dodds Invitational
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/24497/Gil_Dodds_Invitational", 1 )
@@ -417,19 +418,24 @@ to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/23749/202
 to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25206/NJAC_Cross_Country_Championships",  3 )
 
 # NCAA Division III Metro Region Cross Country Championships
-to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25059/NCAA_Division_III_Metro_Region_Cross_Country_Championships", 3 ) 
+to_scrape <- add_to_scrape(to_scrape,"https://www.tfrrs.org/results/xc/25059/NCAA_Division_III_Metro_Region_Cross_Country_Championships", 3 )
 
 
 # drop duplicates
-to_scrape <- unique(to_scrape)
+to_scrape_dedup <- unique(to_scrape)
 
 
 # get the datasets 
 dates <- NULL
 
+total_races <- data.frame() 
 # get the datasets 
 for(i in 1:nrow(to_scrape_dedup)) {
   data <- scrape_meet(toString(to_scrape_dedup[i,1]), as.integer(to_scrape_dedup[i,2]) )
+  new_list <- as.vector(data$Team)
+  total_races <- rbind(total_races,data)
+  
+  
   
   dates[i] <- to_scrape_dedup[i,1] %>%
     read_html() %>%
@@ -446,9 +452,16 @@ for(i in 1:nrow(to_scrape_dedup)) {
 
 adj_mat_list <- list()
 adj_mat_list_diff <- list()
+adj_mat_list_time_diff <- list()
 
 for(i in 1:length(datasets)){
   df <- datasets[[i]]
+  # drop rows with NA in PL
+  df <- drop_na(df, PL)
+  time_in_sec <- sapply(df[[4]], function(t) {
+    parts <- unlist(strsplit(as.character(t), ":"))
+    as.numeric(parts[1]) * 60 + as.numeric(parts[2])
+  })  
   adj_matrix <- df %>%
     select(PL, Team) %>%
     mutate(team2 = Team) %>%
@@ -457,37 +470,65 @@ for(i in 1:length(datasets)){
     select(PL, Team) %>%
     mutate(team2 = Team) %>%
     pivot_wider(names_from = team2, values_from = PL)
+  adj_matrix_time_diff <- df %>%
+    select(PL, Team) %>%
+    mutate(team2 = Team) %>%
+    pivot_wider(names_from = team2, values_from = PL)
   
-  scores <- as.numeric(as.character(df$PL))
+  scores <- as.numeric(as.character(df$Score))
   
   for(row in 1:nrow(adj_matrix)){
     for(col in 2:(row + 1)){
       adj_matrix[row, col] <- 1
-      adj_matrix_score_diff[row, col] <- abs(scores[col] - scores[row])
+      # need to calculate the average score that row beat column by
+      # right now only store if positive. if neftagive it means that j lost to i
+      # col minus one because team is a column
+      diff <- scores[col- 1] - scores[row]
+      # negative because that means that the col won 
+      if (diff < 0) {
+        # how much did col beat row
+        adj_matrix_score_diff[row, col] <- diff
+        adj_matrix_time_diff[row, col] <- time_in_sec[col-1] - time_in_sec[row] 
+        
+      } else {
+        adj_matrix_score_diff[row, col] <- 0
+      }
     }
     for(col in (row + 1):ncol(adj_matrix)){
       adj_matrix[row, col] <- 0
       adj_matrix_score_diff[row, col] <- 0
+      adj_matrix_time_diff[row, col] <- 0
     }
   }
   mat <- data.matrix(adj_matrix %>% select(-1))
   mat_diff <- data.matrix(adj_matrix_score_diff %>% select(-1))
+  mat_time_diff <- data.matrix(adj_matrix_time_diff %>% select(-1))
+  
   dimnames(mat) <- list(adj_matrix[[1]], adj_matrix[[1]])
   dimnames(mat_diff) <- list(adj_matrix_score_diff[[1]], adj_matrix_score_diff[[1]])
+  dimnames(mat_time_diff) <- list(adj_matrix_time_diff[[1]], adj_matrix_time_diff[[1]])
+  
   adj_mat_list[[i]] <- mat
   adj_mat_list_diff[[i]] <- mat_diff
+  adj_mat_list_time_diff[[i]] <- mat_time_diff
 }
 
 ordered <- order(dates, decreasing = TRUE)
-alpha = 0.9
+alpha = 1
  #divide by alpha^i for most recent to oldest races
 for (i in 1:length(ordered)) {
  #go in reverse
  #most recent to oldest
   most_recent_index <- ordered[i]
+  # get month of most_recent_index
+  date <- as.Date(dates[most_recent_index])
+  month_number <- as.numeric(substr(as.Date(date), 6,7))
+  # championship month is 11, so month 11 should be 1, and 10 should be 0.5 and so on
+  mult_by <- alpha ^ (11 - month_number)
+  
   j = length(ordered) - i
-  adj_mat_list[[most_recent_index]] <- (adj_mat_list[[most_recent_index]] * alpha^i)
-  adj_mat_list_diff[[most_recent_index]] <- (adj_mat_list_diff[[most_recent_index]] * alpha^i)
+  adj_mat_list[[most_recent_index]] <- (adj_mat_list[[most_recent_index]] * mult_by)
+  adj_mat_list_diff[[most_recent_index]] <- (adj_mat_list_diff[[most_recent_index]] * mult_by)
 }
 
 
@@ -509,35 +550,56 @@ dimnames(mat) <- list(schools, schools)
 mat_diff <- matrix(0L, length(schools), length(schools))
 dimnames(mat_diff) <- list(schools, schools)
 
+mat_time_diff <- matrix(0L, length(schools), length(schools))
+dimnames(mat_time_diff) <- list(schools, schools)
+
 for(i in 1:length(adj_mat_list)){
   i_matrix <- adj_mat_list[[i]]
   i_matrix_diff <- adj_mat_list_diff[[i]]
+  i_matrix_time_diff <- adj_mat_list_time_diff[[i]]
+  
   for(row in 1:nrow(i_matrix)){
     for(col in 1:ncol(i_matrix)){
       mat[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix[row, col]
       mat_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix_diff[row, col]
+      mat_time_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] <- mat_time_diff[rownames(i_matrix)[row], rownames(i_matrix)[col]] + i_matrix_time_diff[row, col]
     }
   }
 }
 
+# convert to averages
+for(row in 1:nrow(mat)){
+  for(col in 1:ncol(mat)){
+    if (mat[row, col] != 0 ) {
+      mat_diff[row, col] <- abs(mat_diff[row, col] / mat[row, col] )
+      mat_time_diff[row, col] <- abs(mat_time_diff[row, col] / mat[row, col] )
+    }
+  }
+}
+
+# now need to divide by the number of times that we added to each, so we can use the average
+# the adjacency matrix already has the number of times i beat j, so just divide by that
 mat # final adjacency matrix
+
 
 
 # get list of all D3 programs from TFRRS
 d3_schools <- scrape_meet("https://www.tfrrs.org/leagues/51.html", 1)[[2]]
 #d3_schools <- c("MIT", "U. of Chicago", "Williams", "NYU", "Johns Hopkins" , "Colorado College", "Emory", "Washington and Lee", "SUNY Geneseo", "Washington U.", "Claremont-Mudd-Scripps", "RPI", "Wis.-La Crosse", "Amherst", "Calvin", "Tufts", "St. Olaf", "Carleton", "UC Santa Cruz", "Vassar", "George Fox", "Middlebury", "Connecticut College", "Wesleyan", "Carnegie Mellon", "Wartburg", "Lynchburg", "Trine", "DePauw", "Pomona-Pitzer", "Coast Guard", "Rowan")
 
-setdiff(d3_schools, d3_schools_official)
+#setdiff(d3_schools, d3_schools_official)
 
 
 temp_mat <- as.data.frame(mat)
 temp_mat_diff <- as.data.frame(mat_diff)
+temp_mat_time_diff <- as.data.frame(mat_time_diff)
 
 # order is enforced by in operator, so dont need to order
 # keep cols for schools
 names.use1 <- names(temp_mat)[(names(temp_mat) %in% d3_schools)]
 temp_mat<- temp_mat[, names.use1]
 temp_mat_diff <- temp_mat_diff[, names.use1]
+temp_mat_time_diff <- temp_mat_time_diff[, names.use1]
 # get only the rows we care about
 
 
@@ -551,13 +613,27 @@ final_diff <- temp_mat_diff |>
   filter(rowname %in% d3_schools) |>
   select(-c("rowname"))
 
+final_time_diff <- temp_mat_time_diff |>
+  rownames_to_column() |>
+  filter(rowname %in% d3_schools) |>
+  select(-c("rowname"))
+
 
 dimnames(final) <- list(colnames(final), colnames(final))
 dimnames(final_diff) <- list(colnames(final_diff), colnames(final_diff))
-
+dimnames(final_time_diff) <- list(colnames(final_time_diff), colnames(final_time_diff))
 
 write_csv(final, "running_all_d3.csv")
 write_csv(final_diff, "running_all_d3_diff.csv")
+write_csv(final_time_diff, "running_all_d3_time_diff.csv")
 
 
 totalDegree <- final %>% colSums() %>% as.data.frame() %>% rename("count" = ".")
+
+counting_races <- total_races |>
+    count(Team)
+
+places <- total_races |>
+  select(c(PL, Team))
+write.csv(counting_races, "running_counting_races.csv")
+write.csv(places, "running_counting_places.csv")

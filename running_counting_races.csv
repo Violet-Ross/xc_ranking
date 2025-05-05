@@ -1,0 +1,689 @@
+"","Team","n"
+"1","Academy of Art",1
+"2","Adelphi",3
+"3","Adrian",2
+"4","Agnes Scott",2
+"5","Air Force",2
+"6","Albany",1
+"7","Albany State",1
+"8","Albion",4
+"9","Alfred",4
+"10","Alfred State",4
+"11","Allegheny",1
+"12","Alma",3
+"13","Alumni - Vassar",1
+"14","Alvernia",1
+"15","American River",1
+"16","Amherst",6
+"17","Anderson (Ind.)",5
+"18","Apex Friendship",1
+"19","Arcadia",1
+"20","Arizona Christian",1
+"21","Arizona State",1
+"22","Asbury",1
+"23","Assumption",3
+"24","Athens Drive",1
+"25","Auburn",1
+"26","Augsburg",1
+"27","Augusta",1
+"28","Aurora",3
+"29","Averett",3
+"30","Azusa Pacific",1
+"31","Babson",4
+"32","Baldwin Wallace",4
+"33","Bard",3
+"34","Baruch",1
+"35","Bates",4
+"36","Belmont",1
+"37","Beloit",2
+"38","Bentley",2
+"39","Berea",2
+"40","Berry",1
+"41","Bethany Lutheran",3
+"42","Bethel (Ind.)",2
+"43","Bethel (Minn.)",5
+"44","Biola",1
+"45","Bluefield St.",2
+"46","Bob Jones",3
+"47","Bolles",1
+"48","Boston University",1
+"49","Bowdoin",4
+"50","Brandeis",4
+"51","Brenau",1
+"52","Brevard",1
+"53","Brewton-Parker",1
+"54","Bridgeport",2
+"55","Bridgewater (Va.)",4
+"56","Brockport St.",5
+"57","Brown",2
+"58","Bryant",2
+"59","Bryn Mawr",4
+"60","Bucknell",1
+"61","Buena Vista",1
+"62","Buffalo",2
+"63","Buffalo State",3
+"64","Bushnell",2
+"65","Butler",1
+"66","CBU",3
+"67","CSU Bakersfield",1
+"68","CSUMB",1
+"69","CSUN",1
+"70","CUI",1
+"71","Cairn",2
+"72","Cal Lutheran",5
+"73","Cal Poly",1
+"74","Cal Poly DC",2
+"75","Cal Poly Pomona",2
+"76","Cal St. East Bay",1
+"77","Cal St. Fullerton",2
+"78","Cal St. Los Angeles",1
+"79","California",1
+"80","California (Pa.)",1
+"81","Caltech",5
+"82","Calvin",4
+"83","Capital",1
+"84","Carleton",6
+"85","Carlow",1
+"86","Carnegie Mellon",7
+"87","Carroll (Wis.)",3
+"88","Carson-Newman",1
+"89","Carthage",3
+"90","Case Western",4
+"91","Castleton",2
+"92","Catawba",1
+"93","Catholic",2
+"94","Cedar Crest",1
+"95","Centenary (N.J.)",1
+"96","Central Arizona",1
+"97","Central College",3
+"98","Central Connecticut",1
+"99","Central Michigan",1
+"100","Central State",1
+"101","Central Washington",1
+"102","Centre",4
+"103","Cerritos",1
+"104","Chantilly",1
+"105","Chapman",3
+"106","Charleston (W.V.)",1
+"107","Charlotte",1
+"108","Charlotte Catholic",1
+"109","Chatham",2
+"110","Chestnut Hill",1
+"111","Christopher Newport",3
+"112","Claremont-Mudd-Scripps",7
+"113","Clarion",1
+"114","Clark (Mass.)",5
+"115","Clarkson",4
+"116","Clayton State",1
+"117","Clovis CC",1
+"118","Coast Guard",7
+"119","Coe",1
+"120","Colby",4
+"121","Colby-Sawyer",4
+"122","Colgate",1
+"123","College of Idaho",1
+"124","Colo. Sch. of Mines",1
+"125","Colorado College",5
+"126","Columbia",1
+"127","Columbus St.",1
+"128","Concord",2
+"129","Concordia (Tex.)",1
+"130","Concordia (Wis.)",1
+"131","Concordia Univ. Chicago",1
+"132","Concordia-Moorhead",4
+"133","Conestoga 01",1
+"134","Connecticut",4
+"135","Connecticut College",6
+"136","Corban",1
+"137","Cornell",1
+"138","Cornell College",4
+"139","Cortland St.",6
+"140","Covenant",2
+"141","Creighton",1
+"142","Croatan",1
+"143","Crown",2
+"144","Cumberlands",1
+"145","D'Youville",1
+"146","Daemen",1
+"147","Dallas",1
+"148","Dartmouth",1
+"149","Davenport",1
+"150","Davidson",1
+"151","DePaul",1
+"152","DePauw",5
+"153","DeSales",2
+"154","Dean (Mass.)",2
+"155","Delaware Valley",2
+"156","Denison",3
+"157","Dickinson",4
+"158","Dominican (Cal.)",1
+"159","Dominican (Ill.)",2
+"160","Drew",2
+"161","DuPage",2
+"162","Dubuque",2
+"163","Duquesne",3
+"164","Earlham",1
+"165","East Stroudsburg",1
+"166","East Tenn. St.",2
+"167","Eastern",1
+"168","Eastern Conn. St.",5
+"169","Eastern Illinois",1
+"170","Eastern Kentucky",1
+"171","Eastern Mennonite",2
+"172","Eastern Oregon",1
+"173","Elizabethtown",2
+"174","Elmhurst",4
+"175","Elon",1
+"176","Embry-Riddle",1
+"177","Embry-Riddle Arizona",1
+"178","Emerson",3
+"179","Emmanuel (Ga.)",1
+"180","Emmaus Bible",1
+"181","Emory",7
+"182","Emory & Henry",2
+"183","Endicott",3
+"184","Episcopal School (JAX)",1
+"185","Evansville",1
+"186","Everett CC",3
+"187","Evergreen St.",1
+"188","Fairfield",1
+"189","Fairmont St",1
+"190","Faith Baptist Bible",1
+"191","Fayetteville St.",1
+"192","Ferris State",1
+"193","Fitchburg St.",3
+"194","Flagler",1
+"195","Florida A&M",1
+"196","Florida State",1
+"197","Fort Mill",1
+"198","Framingham St.",3
+"199","Franciscan (Ohio)",1
+"200","Franklin",2
+"201","Franklin & Marshall",2
+"202","Franklin Pierce",2
+"203","Fredonia",3
+"204","Fresno Pacific",2
+"205","Fresno State",3
+"206","Gannon",1
+"207","Gardner-Webb",1
+"208","Geneva",2
+"209","George Fox",5
+"210","Georgetown",1
+"211","Georgetown Visitation Prep",1
+"212","Georgia",1
+"213","Georgia Southern",1
+"214","Georgia Southwestern",1
+"215","Georgia State",2
+"216","Georgia Tech",2
+"217","Georgian Court",1
+"218","Gettysburg",4
+"219","Glenville St.",1
+"220","Gordon",2
+"221","Governors State",2
+"222","Grand Canyon",1
+"223","Grand Valley St.",1
+"224","Green Level",1
+"225","Green River College",1
+"226","Greenville",1
+"227","Grinnell",3
+"228","Grove City",2
+"229","Gustavus Adolphus",5
+"230","Hamilton",4
+"231","Hamline",4
+"232","Hanover",3
+"233","Hardin-Simmons",1
+"234","Hartford",2
+"235","Hartwick",3
+"236","Haverford",4
+"237","Hawaii",1
+"238","Heidelberg",1
+"239","Hiram",2
+"240","Hoggard",1
+"241","Holy Cross",2
+"242","Holy Family",1
+"243","Hood",1
+"244","Hope",4
+"245","Houghton",2
+"246","Hub City Track Club",1
+"247","Hudson Valley CC",1
+"248","Hunter",1
+"249","Husson",1
+"250","Ideal Performance Athletics",1
+"251","Illinois",1
+"252","Illinois State",1
+"253","Illinois Tech",1
+"254","Illinois Valley",1
+"255","Illinois Wesleyan",1
+"256","Illinois-Springfield",1
+"257","Indian Hills CC",1
+"258","Indiana",1
+"259","Indiana (Pa.)",1
+"260","Indiana East",1
+"261","Indiana State",3
+"262","Iona",1
+"263","Ithaca",5
+"264","Jacksonville",1
+"265","Jacksonville St.",1
+"266","James Madison",1
+"267","Jefferson (GA)",1
+"268","Jefferson (Pa.)",1
+"269","Jessup",1
+"270","John Carroll",3
+"271","Johns Hopkins",7
+"272","Johnson & Wales (R.I.)",1
+"273","Joliet Junior College",2
+"274","Judson",1
+"275","Juniata",1
+"276","Kalamazoo",5
+"277","Kansas",1
+"278","Kean",2
+"279","Keene State",5
+"280","Kennesaw State",2
+"281","Kenyon",1
+"282","Keuka",3
+"283","King",1
+"284","King's (Pa.)",1
+"285","Knox",1
+"286","Knoxville Catholic",1
+"287","La Roche",1
+"288","La Salle",1
+"289","La Verne",3
+"290","Lake Forest",1
+"291","Lake Michigan College",1
+"292","Lake Norman",1
+"293","Lancaster Bible",1
+"294","Lander",1
+"295","Lane CC",1
+"296","Lansing CC",1
+"297","Lasell",2
+"298","Lawrence",1
+"299","Le Moyne",1
+"300","Lebanon Valley",2
+"301","Leesville Road",1
+"302","Lehigh",1
+"303","Lenoir-Rhyne",3
+"304","Lesley",1
+"305","Lewis & Clark",5
+"306","Liberty",3
+"307","Limestone",1
+"308","Lincoln (Pa.)",1
+"309","Linfield University Alumni",1
+"310","Lock Haven",1
+"311","Long Beach St.",1
+"312","Longwood",1
+"313","Loras",1
+"314","Lourdes",1
+"315","Loyola (Md.)",1
+"316","Loyola Marymount",1
+"317","Luther",4
+"318","Lycoming",1
+"319","Lynchburg",6
+"320","MIT",4
+"321","MSOE",3
+"322","MSU Denver",1
+"323","MSU Running Club",1
+"324","Macalester",5
+"325","Macomb CC",1
+"326","Maine",1
+"327","Maine-Farmington",1
+"328","Manchester",3
+"329","Marian (Ind.)",2
+"330","Marietta",2
+"331","Marist",1
+"332","Marquette",1
+"333","Mars Hill",1
+"334","Martin Luther",4
+"335","Marvin Ridge",1
+"336","Mary Baldwin",2
+"337","Mary Washington",2
+"338","Maryland",2
+"339","Marymount (Va.)",1
+"340","Maryville (Tenn.)",1
+"341","Marywood",2
+"342","Mass. Maritime",2
+"343","McDaniel",3
+"344","McMurry",2
+"345","Medgar Evers",3
+"346","Mercyhurst",2
+"347","Meredith",3
+"348","Merrimack",2
+"349","Messiah",2
+"350","Miami (Fla.)",1
+"351","Miami (Ohio)",2
+"352","Michigan",1
+"353","Michigan Running Club",1
+"354","Michigan State",1
+"355","Middlebury",6
+"356","Mill Creek",1
+"357","Millikin",1
+"358","Millsaps",1
+"359","Milwaukee",1
+"360","Minnesota State",1
+"361","Minnesota-Crookston",1
+"362","Minnesota-Duluth",2
+"363","Minnesota-Morris",2
+"364","Misericordia",3
+"365","Missouri",1
+"366","Monmouth",1
+"367","Montclair State",4
+"368","Moraine Valley CC",1
+"369","Moravian",3
+"370","Morehead State",1
+"371","Morrisville State",2
+"372","Mount Holyoke",5
+"373","Mount Mercy",1
+"374","Mount Olive",1
+"375","Mount Union",4
+"376","Muhlenberg",2
+"377","Muskingum",2
+"378","Myers Park",1
+"379","N.C. Central",1
+"380","NC School of Science & Math",1
+"381","NYU",7
+"382","Navy",2
+"383","Nazareth",6
+"384","Nease",1
+"385","Nebraska Wesleyan",2
+"386","Nevada",1
+"387","New Hampshire",1
+"388","New Haven",2
+"389","New Jersey City",2
+"390","New Mexico Highlands",1
+"391","New Paltz St.",5
+"392","Newberry",1
+"393","North Central (Ill.)",1
+"394","North Georgia",2
+"395","North Greenville",1
+"396","North Lincoln",1
+"397","North Oldham",1
+"398","Northeastern",3
+"399","Northern New Mexico",1
+"400","Northland",1
+"401","Northwest Nazarene",1
+"402","Northwestern (Minn.)",1
+"403","Northwood",1
+"404","Norwich",2
+"405","Oakland",1
+"406","Oberlin",4
+"407","Occidental",4
+"408","Oglethorpe",2
+"409","Ohio Northern",3
+"410","Ohio State",1
+"411","Ohio Wesleyan",1
+"412","Olivet",2
+"413","Olivet Nazarene",1
+"414","Oneonta",4
+"415","Oregon State",3
+"416","Oregon Tech",1
+"417","Oswego State",3
+"418","Ottawa University",1
+"419","Otterbein",1
+"420","Ozarks (Ark.)",1
+"421","PSU-Abington",2
+"422","PSU-Behrend",3
+"423","PSU-Harrisburg",1
+"424","Pacific",2
+"425","Pacific (Ore.)",5
+"426","Pacific Lutheran",4
+"427","Panther Creek",1
+"428","Paradise Valley",1
+"429","Pellissippi State CC",2
+"430","Penn",2
+"431","Penn College",1
+"432","Penn State",1
+"433","Pepperdine",1
+"434","Pfeiffer",4
+"435","Piedmont",4
+"436","Pinecrest",1
+"437","Pitt.-Johnstown",1
+"438","Pittsburgh",4
+"439","Plattsburgh St.",5
+"440","Plymouth State",4
+"441","Point Park",2
+"442","Pomona-Pitzer",6
+"443","Portland",2
+"444","Portland State",1
+"445","Potsdam St.",2
+"446","Presbyterian",1
+"447","Princeton",1
+"448","Providence",3
+"449","Puget Sound",4
+"450","Purchase",1
+"451","Purdue",1
+"452","Purdue Fort Wayne",1
+"453","Purdue Northwest",1
+"454","Queen's University",1
+"455","Queens (N.C.)",2
+"456","Quinnipiac",2
+"457","RIC",3
+"458","RIT",6
+"459","RPI",6
+"460","Radford",3
+"461","Ramapo",3
+"462","Randolph",1
+"463","Redlands",3
+"464","Regis (Colo.)",1
+"465","Regis (Mass.)",2
+"466","Rhode Island",2
+"467","Rhodes",1
+"468","Ripon",2
+"469","Riverside (4A)",1
+"470","Rivier",1
+"471","Roanoke",5
+"472","Robert Morris",2
+"473","Roberts Wesleyan",1
+"474","Rochester",6
+"475","Roger Williams",6
+"476","Roosevelt",1
+"477","Rose-Hulman",3
+"478","Rowan",5
+"479","Run Club at IU",2
+"480","Rutgers-Camden",2
+"481","Rutgers-Newark",2
+"482","SCAD Savannah",1
+"483","SNHU",2
+"484","SUNY Canton",1
+"485","SUNY Cobleskill",1
+"486","SUNY Delhi",2
+"487","SUNY Geneseo",8
+"488","SUNY-ESF",2
+"489","SW Michigan",1
+"490","Sacramento St.",2
+"491","Sacred Heart",1
+"492","Saginaw Valley",2
+"493","Saint Mary's (Minn.)",4
+"494","Salisbury",3
+"495","Salt Lake",2
+"496","Salve Regina",6
+"497","San Diego",1
+"498","San Diego Mesa College",1
+"499","San Diego St.",1
+"500","San Francisco",1
+"501","San Jose St.",1
+"502","San Marcos",1
+"503","Santa Clara",2
+"504","Sarah Lawrence",1
+"505","Schreiner",1
+"506","Scranton",1
+"507","Seton Hall",2
+"508","Seton Hill",1
+"509","Shenandoah",4
+"510","Siena",1
+"511","Simmons",3
+"512","Simpson (Cal.)",1
+"513","Simpson (Iowa)",1
+"514","Smith",5
+"515","So. Conn. St.",2
+"516","Soka",1
+"517","South Alabama",1
+"518","South Carolina",1
+"519","South Dakota",1
+"520","South Dakota St.",2
+"521","Southeastern CC",1
+"522","Southern Maine",3
+"523","Southern Oregon",2
+"524","Southern Utah",2
+"525","Southern Virginia",1
+"526","Southwestern (Tex.)",2
+"527","Southwestern Oregon CC",1
+"528","Spalding",2
+"529","Spokane CC",1
+"530","Spring Arbor",1
+"531","Springfield",6
+"532","St. Ambrose",2
+"533","St. Anselm",3
+"534","St. Benedict",3
+"535","St. Bonaventure",1
+"536","St. Catherine (Minn.)",5
+"537","St. Clair County CC",1
+"538","St. Cloud State",1
+"539","St. Francis (Ill.)",1
+"540","St. Francis (Ind.)",1
+"541","St. John Fisher",6
+"542","St. John's",1
+"543","St. Joseph's (L.I.)",1
+"544","St. Joseph's (Me.)",3
+"545","St. Joseph's (Pa.)",2
+"546","St. Lawrence",5
+"547","St. Mary's (Cal.)",3
+"548","St. Mary's (Ind.)",3
+"549","St. Mary's (Md.)",1
+"550","St. Mary-of-the-Woods",4
+"551","St. Michael's",2
+"552","St. Norbert",2
+"553","St. Olaf",8
+"554","St. Scholastica",5
+"555","St. Thomas (Tex.)",2
+"556","St. Vincent (Pa.)",1
+"557","St. Xavier",1
+"558","Stanford",1
+"559","Stanford Club",1
+"560","Stetson",1
+"561","Stevens",3
+"562","Stockton",3
+"563","Stonehill",1
+"564","Suffolk",3
+"565","Susquehanna",2
+"566","Swarthmore",4
+"567","Sweet Briar",3
+"568","Syracuse",1
+"569","T.C. Roberson",1
+"570","TCNJ",5
+"571","Temple",2
+"572","Texas Lutheran",2
+"573","The Master's",2
+"574","Thomas College",1
+"575","Transylvania",2
+"576","Treasure Valley CC",1
+"577","Trine",7
+"578","Trinity (Conn.)",7
+"579","Trinity (Tex.)",2
+"580","Trinity Christian",2
+"581","Troy",1
+"582","Tufts",8
+"583","Turpin",1
+"584","Tuskegee",1
+"585","U of Manitoba",1
+"586","U. of Chicago",7
+"587","U. of New England",1
+"588","U. of the South",1
+"589","UAB",1
+"590","UAlbany",1
+"591","UC Davis",3
+"592","UC Davis XC & Track Club",1
+"593","UC Irvine",1
+"594","UC Merced",2
+"595","UC Riverside",1
+"596","UC San Diego",1
+"597","UC Santa Barbara",2
+"598","UC Santa Cruz",6
+"599","UC-Colo. Spgs.",2
+"600","UMHB",1
+"601","UMass Amherst",1
+"602","UMass Boston",2
+"603","UMass Dartmouth",5
+"604","UMass Lowell",3
+"605","UNC-Asheville",1
+"606","USC Aiken",1
+"607","USC Upstate",1
+"608","USC-Beaufort",1
+"609","USF Alumni",1
+"610","USMMA",1
+"611","Umpqua CC",2
+"612","Union (N.Y.)",6
+"613","Upper Iowa",2
+"614","Ursinus",3
+"615","Utah State",2
+"616","Utah Tech",1
+"617","Utica",2
+"618","Valdosta State",1
+"619","Valley Forge",2
+"620","Valparaiso",1
+"621","Vanderbilt",1
+"622","Vanguard",1
+"623","Vassar",7
+"624","Vermont",3
+"625","Villanova",2
+"626","Virginia Tech",1
+"627","Virginia Wesleyan",1
+"628","Viterbo",2
+"629","WPI",2
+"630","Wake Forest",1
+"631","Walla Walla",1
+"632","Wallace State",1
+"633","Walsh",1
+"634","Wartburg",7
+"635","Wartburg Alumni",1
+"636","Washington & Jefferson",2
+"637","Washington St.",1
+"638","Washington U.",4
+"639","Washington and Lee",8
+"640","Watauga",1
+"641","Waubonsee CC",1
+"642","Waynesburg",1
+"643","Webster",2
+"644","Weddington",1
+"645","Wellesley",5
+"646","Wentworth",2
+"647","Wesleyan",6
+"648","Wesleyan School",1
+"649","West Chester",1
+"650","West Forsyth",1
+"651","West Georgia",1
+"652","West Virginia",2
+"653","West Virginia Wesleyan",1
+"654","Western Carolina",1
+"655","Western Michigan",1
+"656","Western NE",3
+"657","Western New Mexico",1
+"658","Western Oregon",1
+"659","Westfield State",6
+"660","Westmont",1
+"661","Wheaton (Ill.)",2
+"662","Wheaton (Mass.)",4
+"663","Whitman",4
+"664","Whitworth",4
+"665","Widener",3
+"666","Willamette",4
+"667","William Smith",5
+"668","Williams",8
+"669","Wilmington (Del.)",1
+"670","Wilmington (Ohio)",1
+"671","Wingate",2
+"672","Wis.-Eau Claire",3
+"673","Wis.-La Crosse",3
+"674","Wis.-Oshkosh",4
+"675","Wis.-Parkside",1
+"676","Wis.-Platteville",3
+"677","Wis.-River Falls",5
+"678","Wis.-Stevens Point",2
+"679","Wis.-Stout",3
+"680","Wis.-Superior",2
+"681","Wis.-Whitewater",3
+"682","Wisconsin Lutheran",2
+"683","Wittenberg",3
+"684","Wofford",1
+"685","Wooster",1
+"686","Worcester State",3
+"687","Xavier (Ohio)",1
+"688","York (Pa.)",1
